@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/lost-ark-check-list/sw.js', { scope: '/lost-ark-check-list/' })})}
