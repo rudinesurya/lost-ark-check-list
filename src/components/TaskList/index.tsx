@@ -1,6 +1,6 @@
 import { Card, Checkbox, Header } from 'semantic-ui-react';
 
-const TaskList = ({ tasks, taskCompletion, onTaskToggle }) => {
+const TaskList: React.FC<TaskListProps> = ({ tasks, taskCompletion, onTaskToggle }) => {
     return (
         <Card style={{ padding: '1.5em', backgroundColor: '#f8f8f8' }}>
             <Header as="h4">Tasks</Header>
@@ -15,5 +15,12 @@ const TaskList = ({ tasks, taskCompletion, onTaskToggle }) => {
         </Card>
     );
 };
+
+// Add PropTypes for type checking
+interface TaskListProps {
+    tasks: string[]; // Array of task names
+    taskCompletion: boolean[]; // Array of task completion statuses
+    onTaskToggle: (taskIndex: number) => void; // Function to handle toggling tasks
+}
 
 export default TaskList;
