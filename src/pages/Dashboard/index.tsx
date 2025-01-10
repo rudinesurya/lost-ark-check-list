@@ -3,8 +3,8 @@ import { Card, Grid, Button, Loader, Segment, Header, Form } from 'semantic-ui-r
 import TaskList from '../../components/TaskList';
 
 const appName = 'lost-ark-check-list';
-const characterList = ["Seoa", "Daum", "Kool", "Haraguchi", "Deathscythe", "Sukilul"];
-const taskList = ["Guild Shop", "Exchanges", "Raid-1", "Raid-2", "Raid-3"];
+
+import jsonData from '../../../template.json' assert { type: 'json' };
 
 export default function App() {
   const [taskCompletionState, setTaskCompletionState] = useState({});
@@ -21,8 +21,8 @@ export default function App() {
       } catch (error) {
         console.error("Failed to parse taskCompletionState from localStorage:", error);
       }
-      const initialState = characterList.reduce((acc, char) => {
-        acc[char] = savedState[char] || taskList.map(() => false);
+      const initialState = jsonData.reduce((acc, char) => {
+        acc[char.name] = savedState[char.name] || char.tasks.map(() => false);
         return acc;
       }, {});
       setTaskCompletionState(initialState);
@@ -43,6 +43,7 @@ export default function App() {
 
   // Handler to update task completion state
   const handleTaskToggle = (characterName, taskIndex) => {
+    // console.log(`${characterName} --- ${taskIndex}`);
     const updatedState = { ...taskCompletionState };
     updatedState[characterName][taskIndex] = !updatedState[characterName][taskIndex];
     setTaskCompletionState(updatedState);
@@ -52,8 +53,8 @@ export default function App() {
   const handleResetTasks = () => {
     const confirmed = window.confirm("Are you sure you want to reset all tasks?");
     if (confirmed) {
-      const resetState = characterList.reduce((acc, char) => {
-        acc[char] = taskList.map(() => false);
+      const resetState = jsonData.reduce((acc, char) => {
+        acc[char.name] = char.tasks.map(() => false);
         return acc;
       }, {});
       setTaskCompletionState(resetState);
@@ -74,15 +75,15 @@ export default function App() {
       <Header as="h3" textAlign="center">Task List</Header>
 
       <Grid columns={2} doubling stackable>
-        {characterList.map((character, index) => (
+        {jsonData.map((character, index) => (
           <Grid.Column key={index}>
             <Card>
               <Card.Content>
-                <Header as="h5">{character}</Header>
+                <Header as="h5">{character.name}</Header>
                 <TaskList
-                  tasks={taskList}
-                  taskCompletion={taskCompletionState[character] || []}
-                  onTaskToggle={(taskIndex) => handleTaskToggle(character, taskIndex)} />
+                  tasks={character.tasks}
+                  taskCompletion={taskCompletionState[character.name] || []}
+                  onTaskToggle={(taskIndex) => handleTaskToggle(character.name, taskIndex)} />
               </Card.Content>
             </Card>
           </Grid.Column>
