@@ -3,7 +3,6 @@
         "name": "Seóa",
         "tasks": [
             "Guild Shop",
-            "Exchanges",
             "Behemoth",
             "Echidna",
             "Aegir"
@@ -13,7 +12,6 @@
         "name": "Daùm",
         "tasks": [
             "Guild Shop",
-            "Exchanges",
             "Behemoth",
             "Echidna",
             "Aegir"
@@ -23,7 +21,6 @@
         "name": "Koól",
         "tasks": [
             "Guild Shop",
-            "Exchanges",
             "Behemoth",
             "Echidna",
             "Aegir"
@@ -33,7 +30,6 @@
         "name": "Haraguchi",
         "tasks": [
             "Guild Shop",
-            "Exchanges",
             "Behemoth",
             "Thaemine",
             "Echidna"
@@ -43,7 +39,6 @@
         "name": "Deàthscythe",
         "tasks": [
             "Guild Shop",
-            "Exchanges",
             "Behemoth",
             "Thaemine",
             "Echidna"
@@ -53,7 +48,6 @@
         "name": "Sukilul",
         "tasks": [
             "Guild Shop",
-            "Exchanges",
             "Behemoth",
             "Thaemine",
             "Echidna"
@@ -63,6 +57,7 @@
         "name": "Buuball",
         "tasks": [
             "Exchanges",
+            "World Event",
             "Behemoth",
             "Thaemine",
             "Echidna"
@@ -72,6 +67,7 @@
         "name": "Pheoneater",
         "tasks": [
             "Exchanges",
+            "World Event",
             "Behemoth",
             "Thaemine",
             "Echidna"
@@ -81,6 +77,7 @@
         "name": "Ibonku",
         "tasks": [
             "Exchanges",
+            "World Event",
             "Behemoth",
             "Thaemine",
             "Echidna"
@@ -90,6 +87,7 @@
         "name": "Crappper",
         "tasks": [
             "Exchanges",
+            "World Event",
             "Behemoth",
             "Thaemine",
             "Echidna"
