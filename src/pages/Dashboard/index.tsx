@@ -18,6 +18,7 @@ export default function App() {
 
   // Load initial state from localStorage
   useEffect(() => {
+    // localStorage.clear();
     const loadState = () => {
       let savedState = {};
       try {
@@ -49,12 +50,11 @@ export default function App() {
       const currentDateTimeUTC = new Date();
       const lastCheckedDateStr = localStorage.getItem(`${appName}-lastCheckedDate`);
       const lastCheckedDate = lastCheckedDateStr ? new Date(lastCheckedDateStr) : null;
-
       const currentDateAtResetHour = new Date(currentDateTimeUTC);
       currentDateAtResetHour.setUTCHours(resetHours, 0, 0, 0); // Set the hour to the reset Hour
 
       // Check if lastCheckedDate is before the reset hour and currentDateTimeUTC is after the reset hour
-      if (lastCheckedDate && lastCheckedDate < currentDateAtResetHour && currentDateTimeUTC > currentDateAtResetHour) {
+      if (!lastCheckedDate || lastCheckedDate < currentDateAtResetHour && currentDateTimeUTC > currentDateAtResetHour) {
         if (isWeeklyResetDue(lastCheckedDate, currentDateTimeUTC)) {
           console.log("Weekly reset !");
           handleWeekyAutoResetTasks();
@@ -65,8 +65,7 @@ export default function App() {
         localStorage.setItem(`${appName}-lastCheckedDate`, currentDateTimeUTC.toISOString());
       } else {
         console.log("check passed !");
-        console.log(`lastCheckedDate= ${lastCheckedDate.toUTCString()}`);
-        console.log(`past daily reset= ${currentDateAtResetHour.toUTCString()}`);
+        console.log(`last daily reset= ${currentDateAtResetHour.toUTCString()}`);
       }
     }
 
@@ -86,7 +85,7 @@ export default function App() {
     lastWednesdayDate.setUTCHours(resetHours, 0, 0, 0); // Set it to Wednesday at 10 AM UTC
 
     // Check if a full week has passed since the last checked date
-    if (lastCheckedDate && lastCheckedDate < lastWednesdayDate && currentDateTimeUTC > lastWednesdayDate) {
+    if (!lastCheckedDate || lastCheckedDate < lastWednesdayDate && currentDateTimeUTC > lastWednesdayDate) {
       return true;  // Weekly reset is due
     }
 
@@ -98,7 +97,6 @@ export default function App() {
     if (isInitialRender.current) {
       isInitialRender.current = false; // Set flag to false after initial render
     } else if (!loading) {
-      console.log(taskCompletionState["Pheoneater"]);
       localStorage.setItem(`${appName}-taskCompletionState`, JSON.stringify(taskCompletionState));
     }
   }, [taskCompletionState, loading]);
