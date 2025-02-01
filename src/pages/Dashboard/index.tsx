@@ -59,8 +59,8 @@ export default function App() {
           console.log("Weekly reset !");
           handleWeekyAutoResetTasks();
         } else {
-          // console.log("Daily reset !");
-          // handleDailyAutoResetTasks();
+          console.log("Daily reset !");
+          handleDailyAutoResetTasks();
         }
         localStorage.setItem(`${appName}-lastCheckedDate`, currentDateTimeUTC.toISOString());
       } else {

@@ -1,5 +1,11 @@
 [
     {
+        "name": "Main Roster",
+        "tasks": [
+            "World Event"
+        ]
+    },
+    {
         "name": "Seóa",
         "tasks": [
             "Guild Shop",
@@ -51,6 +57,30 @@
             "Behemoth",
             "Thaemine",
             "Echidna"
+        ]
+    },
+    {
+        "name": "Buuball",
+        "tasks": [
+            "World Event"
+        ]
+    },
+    {
+        "name": "Pheoneater",
+        "tasks": [
+            "World Event"
+        ]
+    },
+    {
+        "name": "Ibonku",
+        "tasks": [
+            "World Event"
+        ]
+    },
+    {
+        "name": "Crappper",
+        "tasks": [
+            "World Event"
         ]
     }
 ]
