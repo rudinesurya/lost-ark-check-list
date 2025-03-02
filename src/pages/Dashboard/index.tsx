@@ -119,7 +119,8 @@ export default function App() {
     const resetState = jsonData.reduce((acc, char) => {
       acc[char.name] = {
         ...taskCompletionState[char.name],  // Retain other fields if present
-        "World Event": false // Reset "World Event" field to false
+        "World Event": false, // Reset "World Event" field to false,
+        "Event Guardian": false // Reset "Event Guardian" field to false
       };
       return acc;
     }, {});

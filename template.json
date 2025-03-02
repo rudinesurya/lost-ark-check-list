@@ -9,24 +9,50 @@
         "name": "Seóa",
         "tasks": [
             "Guild Shop",
+            "Event Guardian",
             "Behemoth",
             "Echidna",
-            "Aegir"
+            "Aegir",
+            "Brel"
         ]
     },
     {
         "name": "Daùm",
         "tasks": [
             "Guild Shop",
+            "Event Guardian",
             "Behemoth",
             "Echidna",
-            "Aegir"
+            "Aegir",
+            "Brel"
         ]
     },
     {
         "name": "Koól",
         "tasks": [
             "Guild Shop",
+            "Event Guardian",
+            "Behemoth",
+            "Echidna",
+            "Aegir",
+            "Brel"
+        ]
+    },
+    {
+        "name": "Deàthscythe",
+        "tasks": [
+            "Guild Shop",
+            "Event Guardian",
+            "Behemoth",
+            "Echidna",
+            "Aegir"
+        ]
+    },
+    {
+        "name": "Sukilul",
+        "tasks": [
+            "Guild Shop",
+            "Event Guardian",
             "Behemoth",
             "Echidna",
             "Aegir"
@@ -36,27 +62,10 @@
         "name": "Haraguchi",
         "tasks": [
             "Guild Shop",
+            "Event Guardian",
             "Behemoth",
-            "Thaemine",
-            "Echidna"
-        ]
-    },
-    {
-        "name": "Deàthscythe",
-        "tasks": [
-            "Guild Shop",
-            "Behemoth",
-            "Thaemine",
-            "Echidna"
-        ]
-    },
-    {
-        "name": "Sukilul",
-        "tasks": [
-            "Guild Shop",
-            "Behemoth",
-            "Thaemine",
-            "Echidna"
+            "Echidna",
+            "Aegir"
         ]
     },
     {
